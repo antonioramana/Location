@@ -1,0 +1,55 @@
+.navbar-brand{
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-family: "Azonix";
+}
+
+#logo span{
+    color: var(--second-color);
+}
+
+ul{
+    display: flex;
+    column-gap: 2rem;
+    list-style-type: none;
+    margin-bottom: -5px;
+}
+
+li a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+
+li a:hover{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+.intru:hover{
+    color: var(--second-color);
+    border-color: var(--second-color);
+}
+
+li a:focus{
+    color: var(--second-color);
+    border-bottom: 3px solid var(--second-color);
+}
+
+.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* #navs.padding_right{
+    /*padding-right: 15rem;
+} */

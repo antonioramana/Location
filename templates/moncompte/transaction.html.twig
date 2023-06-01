@@ -1,0 +1,90 @@
+ {% extends 'base.html.twig' %}
+
+{% block title %}Hello MoncompteController!{% endblock %}
+
+{% block body %}
+       
+ <div class="wrapper rounded">
+                    <nav class="navbar navbar-expand-lg d-lg-flex align-items-lg-start">
+                        <h5 class="navbar-brand" href="#">Transactions</h5>
+                    </nav>
+                    
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <ul class="nav nav-tabs w-75">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#history">Historique</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="color: gray;">Rapports</a>
+                            </li>
+                        </ul>
+                        <button class="btn bg-custom btn-hover" style="color: white;">Nouvelle Transaction</button>
+                    </div>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-dark table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Activité</th>
+                                    <th scope="col">Mode</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Etat</th>
+                                    <th scope="col" class="text-right">Montant</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row"><span class="fa fa-exchange mr-1"></span> Abonnement </td>
+                                    <td><img src="../images/1x/airtel.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">12 Juin 2020, 12:30 PM</td>
+                                    <td class="text-info">En cours</td>
+                                    <td class="d-flex justify-content-end align-items-center"> 50000Ar</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-credit-card mr-1"></span> Crédit </td>
+                                    <td><img src="../images/1x/telma.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">11 Juin 2020, 2:00 PM</td>
+                                    <td class="text-success">Réussi</td>
+                                    <td class="d-flex justify-content-end align-items-center"> 120000Ar </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-exchange mr-1"></span> Abonnement </td>
+                                    <td><img src="../images/1x/telma.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">10 Juin 2020, 8:30 PM</td>
+                                    <td class="text-danger">Echoué</td>
+                                    <td class="d-flex justify-content-end align-items-center">  20000Ar </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-credit-card mr-1"></span> Crédit </td>
+                                    <td><img src="../images/1x/orange.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">12 Mai 2020, 4:30 PM</td>
+                                    <td class="text-success">Réussi</td>
+                                    <td class="d-flex justify-content-end align-items-center">  54000Ar </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-credit-card mr-1"></span> Crédit </td>
+                                    <td><img src="../images/1x/airtel.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">11 Mai 2020, 5:30 PM</td>
+                                    <td class="text-success">Réussi</td>
+                                    <td class="d-flex justify-content-end align-items-center">  60000Ar </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-exchange mr-1"></span> Abonnement </td>
+                                    <td><img src="../images/1x/telma.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">10 Mai 2020, 01:30 PM</td>
+                                    <td class="text-success">Réussi</td>
+                                    <td class="d-flex justify-content-end align-items-center"> 45000Ar </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"> <span class="fa fa-exchange mr-1"></span> Abonnement </td>
+                                    <td><img src="../images/1x/orange.png" alt="" class="payment_mode"></td>
+                                    <td class="text-muted">09 Mai 2020, 01:30 PM</td>
+                                    <td class="text-success">Réussi</td>
+                                    <td class="d-flex justify-content-end align-items-center"> 30000Ar </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+    {% endblock %}

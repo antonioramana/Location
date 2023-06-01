@@ -1,0 +1,46 @@
+{% extends 'homebase.html.twig' %}
+{% block title %}Karloco- Liste des voitures{% endblock %}
+{% block body %}
+    <div class="section layout_padding_top">
+        <div class="container">
+                    <div class="row p-2">
+                        <a href="{{path("app_car_new")}}" class="btn  btn-custom_1 hvr-radial-out">Ajouter une voiture</a>
+                    </div>
+         </div>
+                
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+						   <h2>Quelle <span>voiture</span> est adaptée à votre disposition?</h2>
+                        </div>
+					</div>
+                </div>   
+                <div class="col-md-2" >
+                    <div class="">
+                    {{form_start(form)}} 
+                        {{form_row(form.string)}}    
+                        <button class="btn  btn-custom_1 hvr-radial-out m-1" type="submit">{{ button_label|default('Rechercher') }}</button>    
+                        {{form_row(form.type)}}       
+                         <button class="btn  btn-custom_1 hvr-radial-out m-1" type="submit">{{ button_label|default('Filtrer') }}</button>                    
+                    {{form_end(form)}} 
+                	</div>
+                </div>    
+        {% for car in cars %}
+        <hr class="featurette-divider">
+        <div class="container card p-3 my-1" style="width: 18rem;">
+            <img src="/uploads/{{car.image}}" class="card-img-top" height="200px" width="200px" alt="...">
+             <div class="card-body">
+                  <h5 class="card-title">{{car.mark}}</h5>
+                  <h6><i class="fa fa-automobile"></i>&nbsp;&nbsp;{{car.color}}, {{car.nbplace}} places</h6>
+                                <h5><i class="fa fa-tag rotated"></i>&nbsp;&nbsp;{{car.tarif}}Ar/Jour</h5>
+                                 <a href="{{ path('app_car_show', {'id': car.id}) }}" class="btn btn_xs btn-custom_1 hvr-radial-out">Voir</a>
+            </div>
+            </div>
+        {% endfor %}
+                </div>
+            </div>
+        </div>  
+       
+{% endblock %}

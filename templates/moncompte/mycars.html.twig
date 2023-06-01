@@ -1,0 +1,56 @@
+    {% extends 'base.html.twig' %}
+
+{% block title %}Mes voitures{% endblock %}
+
+{% block body %}
+    <div class="container">
+                {% for type,messages in app.flashes(["success","danger","info"])%}
+                    {% for message in messages %}
+                        <div class="alert alert-{{type}} text-center">{{message}}</div>
+                    {% endfor %}
+                {% endfor %}
+                    <div class="row">
+                        <a href="{{path("app_car_new")}}" class="btn btn-custom col-md-12">Ajouter une voiture</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                     {% for car in cars %}
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="card">
+                                <img class="card-img-top" src="/uploads/{{car.image}}" height="200" width="200">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{car.mark}}</h4>
+                                    <h6><i class="fa fa-automobile"></i>&nbsp;&nbsp;{{car.color}}, {{car.nbplace}} places</h6>
+                                    <div class="btns">
+                                         <a href="{{ path('app_car_edit', {'id': car.id}) }}" class='text-danger'><i class="fa fa-edit ml-3"></i></a>
+                                         <a href="" data-toggle="modal" data-target="#deleteModal{{car.id}}" class='text-danger'><i class="fa fa-trash ml-3"></i></a>         
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        {#delete modal #}
+                        <div class="modal fade" id="deleteModal{{car.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Voulez vous suprimer cette voiture?</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">cliquez sur supprimer pour affectuer la suppréssion</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <a class="btn btn-danger"  href="{{path('app_car_delete', {'id': car.id})}}">Supprimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                       
+                    </div>
+                </div>
+ 
+ {% endblock %}

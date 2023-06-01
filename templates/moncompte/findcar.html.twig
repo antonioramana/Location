@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+     <div class="container">    
+        <div class="row">
+                <div class="col-md-6"> 
+                         <h3 class="text-center">Rechercher une voiture:</h3>
+                                {{form_start(form)}}
+                                        <div class="text-center">
+                                        {{ form_row(form.mark) }}
+                                        {{ form_row(form.type) }}
+                                        <div class="row mt-2">
+                                        <div class="col-md-3 border border-left">
+                                                {{ form_row(form.vintage) }}
+                                        </div>
+                                        <div class="col-md-3 border border-left">
+                                                {{ form_row(form.climatisation) }}
+                                        </div>
+                                        <div class="col-md-3 border border-left">
+                                                {{ form_row(form.decapotable) }}
+                                        </div>
+                                        <div class="col-md-3 border border-left">
+                                                {{ form_row(form.toit_ouvrant) }}
+                                        </div>
+                                        </div>
+                                </div>
+                                {{form_end(form)}}
+
+                </div>
+                <div class="col-md-6"> 
+            {% for car in cars %}
+                <div class=""> 
+                            <div class="card">
+                                <img class="card-img-top" src="/uploads/{{car.image}}" height="200" width="200">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{car.mark}}</h4>
+                                    <h6><i class="fa fa-automobile"></i>&nbsp;&nbsp;{{car.color}}, {{car.nbplace}} places</h6>
+                                    <div class="">
+                                        <a href="{{ path('app_car_show', {'id': car.id}) }}" class="btn btn-custom col-md-12">Voir</a>       
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+  {% endfor%}
+                </div>                     
+        </div>                     
+</div>
+{% endblock %}

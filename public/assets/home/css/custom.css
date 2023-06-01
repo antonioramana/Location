@@ -1,0 +1,15 @@
+/** ADD YOUR AWESOME CODES HERE **/
+
+.bg-custom{
+    background-color: brown;
+}
+
+#btn_send{
+    background-color: rgb(254, 30, 0);
+    width: 11rem;
+    height: 3rem;
+}
+
+#btn_send:hover{
+    color: white;
+}

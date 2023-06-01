@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Karloco- Detail d'une voiture</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <link rel="stylesheet" href="{{asset("assets/home/css/bootstrap.min.css")}}" />
+    <link rel="stylesheet" href="{{asset("assets/home/css/style.css")}}" />
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_banner.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_nav.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_carousel.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/responsive.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/custom.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/simplebar.css")}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/owl.carousel.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/fonts/fontawesome-free-6.0.0-beta3-web/css/all.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/carousel.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/carousel_3d.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/util.css")}}">
+</head>
+
+<body>
+    <div data-simplebar style="width :100%; height: 100vh;">
+    <div data-simplebar style="width :100%; height: 100vh;">
+
+
+    
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="/assets/home/images/logo.png" alt="image">
+                    <div id="logo">&nbsp;Kar<span>LOCO</span></div>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav" id="navs">
+                        <li><a href="{{path("app_home")}}">Acceuil</a></li>
+                        <li><a href="#voitures">Voitures</a></li>
+                        <li><a href={{path("app_login")}}>Connexion</a></li>
+                        <li><a href={{path("app_moncompte")}} class="intru">Mon compte</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="section layout_padding_top">
+        <div class="container">
+                    <div class="row">
+                        <a href="{{path("app_car_new")}}" class="btn  btn-custom_1 hvr-radial-out">Ajouter une voiture</a>
+                    </div>
+         </div>
+                
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+						   <h2>Information de cette <span>voiture</span></h2>
+                        </div>
+					</div>
+                </div>    
+        <div class="container card p-3 my-1" style="width: 40rem;">
+            <img src="/uploads/{{car.image}}" class="card-img-top" height="200px" width="200px" alt="...">
+             <div class="card-body">
+                  <h5 class="card-title"><i class="fa fa-automobile"></i>  Marque: {{car.mark}}, Type: {{car.type}}</h5>
+                  <h6><i class="fa fa-right-long"></i> Vintage: {% if car.vintage %}"oui"{% else %}" Non"{% endif %}</h6>
+                  <h6><i class="fa fa-right-long"></i> Climatisation: {% if car.climatisation %}"oui"{% else %}" Non"{% endif %}</h6>
+                  <h6><i class="fa fa-right-long"></i> Décapotable: {% if car.decapotable %}"oui"{% else %}" Non"{% endif %}</h6>
+                  <h6><i class="fa fa-right-long"></i> Toit ouvrant:{% if car.toitOuvrant %}"Oui"{% else %}"Non"{% endif %} </h6>
+                  <h6><i class="fa fa-right-long"></i> couleur: {{car.color}}</h6>
+                  <h6><i class="fa fa-right-long"></i> Nombre de place: {{car.nbplace}}</h6>
+                  <h5>Description:</h5>
+                    <p>{{car.description}}</p>
+                  <h5><i class="fa fa-tag rotated"></i> Tarif: {{car.tarif}}Ar/Jour</h5>
+
+            <div class="text-center">
+                {% if car.user is same as (app.user) %}
+                      <a href="{{ path('app_car_edit', {'id': car.id}) }}" class="btn  btn-custom_1 hvr-radial-out">Modifier</a>
+                {%else%}
+                    {#   <a href="{{path('app_favoris_new', {'car_id': car.id})}}" class="btn  btn-custom_1 hvr-radial-out">Ajouter aux favoris</a> #}
+                     <a href="{{path('app_reservation_new', {'car_id': car.id})}}" class="btn  btn-custom_1 hvr-radial-out">Reserver</a>
+                {%endif%}      
+                
+            </div>
+            </div>
+            </div>
+                </div>
+            </div>
+        </div>  
+       
+    <footer class="bg-custom text-center text-white">
+        <div class="container p-4 pb-0">
+          <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+          </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="">Karloco.mg</a>
+        </div>
+      </footer>
+      
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <script src="{{asset("assets/home/js/jquery.min.js")}}></script>
+	<script src="{{asset("assets/home/js/popper.min.js")}}></script>
+    <script src="{{asset("assets/home/js/bootstrap.min.js")}}></script>
+    <script src="{{asset("assets/home/js/jquery.magnific-popup.min.js")}}></script>
+    <script src="{{asset("assets/home/js/jquery.pogo-slider.min.js")}}></script>
+    <script src="{{asset("assets/home/js/slider-index.js")}}></script>
+    <script src="{{asset("assets/home/js/form-validator.min.js")}}></script>
+    <script src="{{asset("assets/home/js/contact-form-script.js")}}></script>
+    <script src="{{asset("assets/home/js/isotope.min.js")}}></script>
+    <script src="{{asset("assets/home/js/images-loded.min.js")}}></script>
+    <script src="{{asset("assets/home/js/custom.js")}}></script>
+    <script src="{{asset("assets/home/js/script.js")}}></script>
+    <script src="{{asset("assets/home/js/owl.carousel.js")}}></script>
+    <script src="{{asset("assets/home/js/carousel_custom.js")}}></script>
+    <script src="{{asset("assets/home/js/slidebar.js")}}></script>
+    <script src="{{asset("assets/home/js/carousel_3d.js")}}></script>
+</div>
+</div>
+</body>
+
+</html>

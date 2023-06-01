@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MoncompteController!{% endblock %}
+
+{% block body %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="fb-profile-block">
+                                <div class="fb-profile-block-thumb cover-container"></div>
+                                <div class="profile-img">
+                                    <a href="#">
+                                        <img src="/assets/images/avatar7.png" alt="" title="">        
+                                    </a>
+                                </div>
+                                <div class="profile-name">
+                                    <h2>{{app.user.firstname}} {{app.user.lastname}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   <div class="m-3 text-center border ">
+                        <div class="p-2"><a  class="text-danger p-2 m-2" href="{{ path('app_set_password') }}">Modifier le mot de passe</a></div>
+                       <div class="p-2"><a  class="text-danger p-2" href="{{ path('app_mesvoitures') }}">Mes voitures</a></div>
+                        <div class="p-2"><a class="text-danger p-2"  href="{{ path('app_mesfavoris') }}">Mes favoris</a></div>
+                    </div>
+            </div>
+{% endblock %}

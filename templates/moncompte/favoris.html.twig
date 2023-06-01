@@ -1,0 +1,30 @@
+ {% extends 'base.html.twig' %}
+
+{% block title %}Mes favoris{% endblock %}
+
+{% block body %}
+     <div class="container">
+                    <div class="row">
+                        <a href="{{path("app_car_new")}}" class="btn btn-custom col-md-12">Ajouter un voiture</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                     {% for car in cars %}
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="card">
+                                <img class="card-img-top" src="/uploads/{{car.image}}" height="200" width="200">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{car.mark}}</h4>
+                                    <h6><i class="fa fa-automobile"></i>&nbsp;&nbsp;{{car.color}}, {{car.nbplace}} places</h6>
+                                    <div class="btns">
+                                       <a href="{{ path('app_car_show', {'id': car.id}) }}" class="btn  btn-custom hvr-radial-out">Voir</a>
+                                  </div>  
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                       
+                    </div>
+                </div>
+    {% endblock %}

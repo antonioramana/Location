@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <title>Karloco- {% block title %}{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <link rel="stylesheet" href="{{asset("assets/home/css/bootstrap.min.css")}}" />
+    <link rel="stylesheet" href="{{asset("assets/home/css/style.css")}}" />
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_banner.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_nav.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/style_carousel.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/responsive.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/custom.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/simplebar.css")}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/owl.carousel.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/fonts/fontawesome-free-6.0.0-beta3-web/css/all.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/carousel.css" )}}"/>
+    <link rel="stylesheet" href="{{asset("assets/home/css/carousel_3d.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/home/css/util.css")}}">
+</head>
+
+<body>
+    <div data-simplebar style="width :100%; height: 100vh;">
+    <div data-simplebar style="width :100%; height: 100vh;">
+
+    {% block body %}
+	{% endblock %}
+    
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="/assets/home/images/logo.png" alt="image">
+                    <div id="logo">&nbsp;Kar<span>LOCO</span></div>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav" id="navs">
+                        <li><a href="">Acceuil</a></li>
+                        <li><a href="{{path("app_allcars")}}">Voitures</a></li>
+                        <li><a href={{path("app_login")}}>Connexion</a></li>
+                        <li><a href="#contact" class="intru">Contact</a></li>
+                        <li><a href={{path("app_moncompte")}} class="intru">Mon compte</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <footer class="bg-custom text-center text-white">
+        <div class="container p-4 pb-0">
+          <section class="mb-4">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+          </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="">Karloco.mg</a>
+        </div>
+      </footer>
+      
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <script src="{{asset("assets/home/js/jquery.min.js")}}></script>
+	<script src="{{asset("assets/home/js/popper.min.js")}}></script>
+    <script src="{{asset("assets/home/js/bootstrap.min.js")}}></script>
+    <script src="{{asset("assets/home/js/jquery.magnific-popup.min.js")}}></script>
+    <script src="{{asset("assets/home/js/jquery.pogo-slider.min.js")}}></script>
+    <script src="{{asset("assets/home/js/slider-index.js")}}></script>
+    <script src="{{asset("assets/home/js/form-validator.min.js")}}></script>
+    <script src="{{asset("assets/home/js/contact-form-script.js")}}></script>
+    <script src="{{asset("assets/home/js/isotope.min.js")}}></script>
+    <script src="{{asset("assets/home/js/images-loded.min.js")}}></script>
+    <script src="{{asset("assets/home/js/custom.js")}}></script>
+    <script src="{{asset("assets/home/js/script.js")}}></script>
+    <script src="{{asset("assets/home/js/owl.carousel.js")}}></script>
+    <script src="{{asset("assets/home/js/carousel_custom.js")}}></script>
+    <script src="{{asset("assets/home/js/slidebar.js")}}></script>
+    <script src="{{asset("assets/home/js/carousel_3d.js")}}></script>
+</div>
+</div>
+</body>
+
+</html>

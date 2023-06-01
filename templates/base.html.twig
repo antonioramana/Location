@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Karloco- {% block title %}{% endblock %}</title>
+        	<link rel="stylesheet" href="{{asset("assets/home/fonts/fontawesome-free-6.0.0-beta3-web/css/all.css")}}">
+			<link rel="stylesheet"  href="{{ asset("assets/user-panel/css/sb-admin-2.min.css") }}">
+			<link rel="stylesheet" href="{{ asset("assets/user-panel/css/custom.css") }}">
+			<link rel="stylesheet" href="{{ asset("assets/user-panel/css/style.css") }}">
+			</head>
+	<body id="page-top">
+		<div id="wrapper">
+		{% include 'Layout/NavBar.html.twig' %}
+         <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+        {% include 'Layout/TopBar.html.twig' %}
+		{% block body %}
+		{% endblock %}
+        {% include 'Layout/Footer.html.twig' %}
+        </div>
+	   </div>
+		 <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+</div>
+
+	<script src="{{asset("assets/user-panel/vendor/jquery/jquery.min.js")}}"></script>
+    <script src="{{asset("assets/user-panel/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{asset("assets/user-panel/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+	<script src="{{asset("assets/user-panel/js/sb-admin-2.min.js")}}"></script>
+	<script src="{{asset("assets/user-panel/vendor/chart.js/Chart.min.js")}}"></script>
+	<script src="{{asset("assets/user-panel/js/demo/chart-area-demo.js")}}"></script>
+    <script src="{{asset("assets/user-panel/js/demo/chart-pie-demo.js")}}"></script>
+    </body>
+</html>

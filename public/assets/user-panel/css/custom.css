@@ -1,0 +1,96 @@
+/** ADD YOUR AWESOME CODES HERE **/
+
+.bg-custom{
+    background-color: brown;
+    border: none;
+}
+
+#btn_send{
+    background-color: rgb(254, 30, 0);
+    width: 11rem;
+    height: 3rem;
+}
+
+#btn_send:hover{
+    color: white;
+}
+
+.width-50{
+	width: 50px;
+	height: auto;
+}
+
+.btn-hover:hover{
+    background-color: rgb(143, 29, 12);
+}
+
+button i{
+    color: white
+}
+
+.card-body h4{
+    font-weight: 500;
+}
+
+.card-body h4:hover{
+    color: brown;
+    cursor: pointer;
+}
+
+.btns{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btns i:hover{
+    color: brown;
+}
+
+.btn-custom{
+    background-color: brown;
+    border: 1px solid brown;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.btn-custom:hover{
+    background-color: rgb(143, 29, 12);
+    color: #fff;
+    border: 1px solid rgb(143, 29, 12);
+}
+
+/****LIST NOIRE****/
+
+.people-nearby .google-maps{
+  background: #f8f8f8;
+  border-radius: 4px;
+  border: 1px solid #f1f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.people-nearby .google-maps .map{
+  height: 300px;
+  width: 100%;
+  border: none;
+}
+
+.people-nearby .nearby-user{
+  padding: 20px 0;
+  border-top: 1px solid #f1f2f2;
+  border-bottom: 1px solid #f1f2f2;
+  margin-bottom: 20px;
+}
+
+img.profile-photo-lg{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.center-content{
+    display: flex;
+    justify-content: center;
+}

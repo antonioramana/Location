@@ -1,0 +1,156 @@
+{% extends 'homebase.html.twig' %}
+{% block title %}Karloco- Page d'acceuil{% endblock %}
+{% block body %}
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+          <h1>Reserver votre <span>voiture<br>
+            de reve</span> sur notre plateforme</h1>
+          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Possimus exercitationem libero tempore,<br>
+            consequuntur adipisci dolore sit eligendi perspiciatis<br>
+            ut repellendus! Qui magni ea fugit iure dolore ratione<br>
+            eaque assumenda quam.</h2>
+          <div class="d-flex">
+            <a href="{{path("app_allcars")}}" class="btn btn-custom_1 hvr-radial-out" style="margin-right: 5px;">Reservez maintenant</a>
+            <a href="{{path("app_car_new")}}" class="btn btn-custom_2 hvr-radial-out">Alouez votre voiture</a>
+          </div>
+          <div id="voitures">.</div>
+        </div>
+      </section>
+    <div class="section layout_padding_top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+						   <h2>Quelle <span>voiture</span> est adaptée à votre disposition?</h2>
+                        </div>
+					</div>
+                </div>    
+        {% for car in cars %}
+                    <div class="item p-1 m-1">
+                        <div class="card">
+                            <div class="card_img" style="background-image: url('/uploads/{{car.image}}')" alt="Image voiture" class="card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{car.mark}}</h4>
+                                <h6><i class="fa fa-automobile"></i>&nbsp;&nbsp;{{car.color}}, {{car.nbplace}} places</h6>
+                                <h5><i class="fa fa-tag rotated"></i>&nbsp;&nbsp;{{car.tarif}}Ar/Jour</h5>
+                                <a href="{{ path('app_car_show', {'id': car.id}) }}" class="btn btn_xs btn-custom_1 hvr-radial-out">Voir</a>
+                             </div>
+                        </div>
+                    </div>
+        {% endfor %}
+                    <div class="item">
+                        <div class="card">
+                            <div id="icon_all">
+                                <center><h4>Vous ne trouvez pas ce que vous recherchez?</h4></center> 
+                                <img src="/assets/home/images/grid.png" alt="">
+                                <a href="{{path("app_allcars")}}" class="btn btn-custom_1 btn_xs">Voir tout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="section layout_padding_2_top  layout_padding_2_bottom silver_bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+						   <h2>Vous cherchez <span>quelle marque</span> de voiture?</h2>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+            <div id="carousel" class="carousel m-t-120">
+                <div id='iten_1' class="hideLeft">
+                    <img src="/assets/home/images/logos/mercedes.png">
+                </div>
+             
+                <div id='item_2' class="prevLeftSecond">
+                    <img src="/assets/home/images/logos/audi.png">
+                </div>
+             
+                <div id='item_3' class="prev">
+                    <img src="/assets/home/images/logos/chevrolet.png">
+                </div>
+             
+                <div id='item_4' class="selected">
+                    <img src="/assets/home/images/logos/citroen.png">
+                </div>
+             
+                <div id='item_5' class="next">
+                    <img src="/assets/home/images/logos/ford.png">
+                </div>
+             
+                <div id='item_6' class="nextRightSecond">
+                    <img src="/assets/home/images/logos/opel.png">
+                </div>
+             
+                <div id='item_7' class="hideRight">
+                    <img src="/assets/home/images/logos/peugeot.png">
+                </div>
+             
+                <div id='item_8' class="hideRight">
+                    <img src="/assets/home/images/logos/bmw.png">
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="full">
+                            <div class="text_align_center" id="btn_carousel">
+                                <div id="prev" class="m-r-15"><i class="fa fa-arrow-circle-left"></i></div>
+                                <h3>Citroen</h3>
+                                <div id="next" class="m-l-15"><i class="fa fa-arrow-circle-right"></i></div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+    <div class="section  padding_bottom-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 layout_padding_2">
+                    <div class="full">
+                        <div class="heading_main text_align_left m-t-50">
+						   <h2>Gagner du <span>temps et de l'argent</span></h2>
+                        </div>
+						<div class="full">
+						  <h3>Inscrivez-vous maintenant et profitez de nos meilleures offres au meilleurs tarifs</h3>
+						</div>
+						<div class="full">
+                            <a href="{{path("app_registration")}}" class="btn btn-custom_1 hvr-radial-out m-t-20">Inscription</a>
+						</div>
+                    </div>
+                </div>
+				<div class="col-md-6">
+                    <div class="full">
+                        <img class="img-responsive" src="/assets/home/images/front-car.jpg" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section layout_padding_2_top padding_bottom-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="heading_main text_align_center">
+						   <h2><span>Contactez</span>-nous</h2>
+                        </div>
+					  </div>
+                </div>
+			  </div>
+           </div>
+        </div>
+   
+
+	{% endblock %}

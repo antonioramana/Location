@@ -1,0 +1,82 @@
+ <ul class="navbar-nav bg-custom sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{path("app_home")}}">
+                <div class="sidebar-brand-icon">
+                    <img src="/assets/images/logo.png" alt="image" class="width-50">
+                </div>
+                <div class="sidebar-brand-text mx-3">Karloco</div>
+            </a>
+
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item active">
+                <a class="nav-link" href={{path("app_moncompte")}}>
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Profile</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href={{path("app_mesvoitures")}}>
+                    <i class="fas fa-fw fa-car"></i>
+                    <span>Mes voitures</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href={{path("app_recherche")}}>
+                    <i class="fas fa-fw fa-search"></i>
+                    <span>Recherche</span></a>
+            </li>
+
+           {# <li class="nav-item">
+                <a class="nav-link" href={{path("app_mesfavoris")}}>
+                    <i class="fas fa-fw fa-heart"></i>
+                    <span>Favorites</span></a>
+            </li> #}
+
+            <li class="nav-item">
+                <a class="nav-link" href="myplanning.html">
+                    <i class="fa fa-calendar-days"></i>
+                    <span>Mes planning</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="caise.html">
+                    <i class="fa fa-money-bill"></i>
+                    <span>Caisse</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="mestransactions.html">
+                    <i class="fa fa-exchange"></i>
+                    <span>Mes transactions</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="avis.html">
+                    <i class="fa fa-message"></i>
+                    <span>Avis</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Paramètres</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        

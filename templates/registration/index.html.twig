@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Karloco-inscription</title>
+    <link rel="stylesheet" href={{asset("assets/fonts/material-icon/css/material-design-iconic-font.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/style2.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/style_formulaire.css")}}>
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="/assets/images/signup-img.jpg" alt="car-image">
+                </div>
+            
+                <div class="signup-form">
+                    {% for type,messages in app.flashes(["success","danger","info"])%}
+                    {% for message in messages %}
+                        <div class="alert" style={"background-color": "#cd5300";"width": "100%";"text-align": "center";}>{{message}}</div>
+                    {% endfor %}
+                {% endfor %}
+                        {{form_start(userForm)}}
+                             {{ form_row(userForm.firstname) }}
+                            {{ form_row(userForm.lastname) }}
+                            {{ form_row(userForm.phone) }}
+                            {{ form_row(userForm.email) }}
+                            {{ form_row(userForm.password) }}
+                            {{ form_row(userForm.city) }}
+                            {{ form_row(userForm.province) }}
+                            {{ form_row(userForm.genre,{'attr':{'class':'for-initial'}}) }}
+                        {{form_end((userForm))}}
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src={{asset("assets/vendor/jquery/jquery.min.js")}}></script>
+    <script src={{asset("assets/js/main.js")}}></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
